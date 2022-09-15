@@ -19,9 +19,11 @@
       "@public/*": ["public/*"],
       "@pages/*": ["src/pages/*"],
       "@components/*": ["src/components/*"],
+      "@providers/*": ["src/providers/*"],
       "@layout/*": ["src/layout/*"],
       "@styles/*": ["src/styles/*"],
       "@assets/*": ["src/assets/*"],
+      "@customTypes /*": ["src/types/*"],
       "@utils/*": ["src/utils/*"]
     }
   },

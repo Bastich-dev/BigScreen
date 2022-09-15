@@ -1,17 +1,15 @@
-import gsap from "gsap";
-import Link from "next/link";
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { Avatar, Grid, Stack } from "@mui/material";
+import { useHref, useLocation, useRoutes } from "react-router-dom";
 
 export default function Home() {
   return (
-    <header>
-      HEADER
+    <Stack component={"header"} direction="row" justifyContent="space-between" alignItems="center" spacing={2}>
+      <Avatar alt="BigScreen logo" src="logo.svg" sx={{ width: 56, height: 56 }} />
       <nav>
         <ul>
-          <li></li>
+          <li>Lien 1</li>
         </ul>
       </nav>
-    </header>
+    </Stack>
   );
 }

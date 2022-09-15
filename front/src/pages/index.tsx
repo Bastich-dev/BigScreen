@@ -1,7 +1,10 @@
-import type { NextPage } from "next";
+import { Link } from "react-router-dom";
 
-const Home: NextPage = () => {
-  return <div></div>;
-};
-
-export default Home;
+export default function SurveyPage() {
+  return (
+    <div>
+      <Link to="/admin"> link</Link>
+      Page Survey
+    </div>
+  );
+}

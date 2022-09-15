@@ -1,31 +1,38 @@
-// Imports
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+// // Imports
+// import React, { useCallback, useEffect, useMemo, useState } from "react";
 
-// Types
-type Props = {
-  children: JSX.Element;
-};
+// // Types
+// type Props = {
+//   children: JSX.Element;
+// };
 
-export default function Transitions({ children }: Props) {
-  // Constants
-  const constant = 1;
+// export default function Transitions({ children }: Props) {
+//   // - Constants
+//   const constant = 1;
 
-  // Hooks
-  const hook = useHook();
+//   // - Hooks
+//   const hook = useHook();
 
-  // States
-  const [dataValue, setDataValue] = useState();
+//   // - States
+//   const [dataValue, setDataValue] = useState();
 
-  // Computed values
-  const var1 = useMemo(() => 1 + 2, []);
+//   // - Computed values
+//   const var1 = useMemo(() => 1 + 2, []);
 
-  // Lifecycle
-  useEffect(() => {}, []);
+//   // - Lifecycle
+//   useEffect(() => {}, []);
 
-  // Component Functions
-  const submitForm = () => {};
-  const func1 = useCallback(() => {}, []);
+//   // - Component Functions
+//   const submitForm = () => {};
+//   const func1 = useCallback(() => {}, []);
 
-  // Render
-  return <></>;
-}
+//   // - Render
+//   return <></>;
+// }
+
+// // Functions
+// export function useUserContext() {
+//   return useContext(UserContext);
+// }
+
+export {};
