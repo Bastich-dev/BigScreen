@@ -44,7 +44,7 @@ import AnswerPage from "@pages/answer";
 import DashboardPage from "@pages/admin";
 import QuestionsPage from "@pages/admin/questions";
 import AnswersPage from "@pages/admin/answers";
-import LoginPage from "@pages/admin/login";
+import LoginPage from "@pages/login";
 import Error404Page from "@pages/404";
 
 export const routes = [
@@ -76,7 +76,6 @@ export const routes = [
         auth: true,
         element: <DashboardPage />,
       },
-
       {
         title: "Réponses - Admin",
         path: "answers",
