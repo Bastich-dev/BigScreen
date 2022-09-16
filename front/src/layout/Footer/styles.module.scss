@@ -1,0 +1,42 @@
+footer {
+  padding: 39px 0;
+  z-index: 3;
+  background-color: #141416;
+
+  & > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-family: "Poppins", sans-serif;
+  }
+
+  span {
+    font-size: 14px;
+  }
+
+  nav {
+    ul {
+      display: flex;
+      align-items: center;
+      li {
+        margin-left: 20px;
+        a {
+          font-family: "SFProDisplay-Bold";
+          line-height: 1.14286;
+          font-weight: 700;
+          text-decoration: none;
+          color: #777e90;
+          background-color: initial;
+          transition: color 0.3s;
+          &:visited {
+            color: #777e90;
+          }
+          &:hover {
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}

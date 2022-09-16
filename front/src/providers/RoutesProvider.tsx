@@ -1,31 +1,40 @@
 import React, { createContext } from "react";
-import { BrowserRouter, Routes, Route, RouterProvider } from "react-router-dom";
-import { useUserContext } from "@providers/AuthProvider";
-import UserContextInterface from "@customTypes /UserContextInterface";
+import { BrowserRouter, Routes, Route, RouterProvider, useLocation, Navigate } from "react-router-dom";
+import { useUserContext, UserContextInterface } from "@providers/AuthProvider";
 
 export default function RoutesProvider({ children }: any) {
-  const { user } = useUserContext() as UserContextInterface;
-
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={children}>
-          {routes
-            .filter(e => !e.auth || (e.auth && user?.id)) // Filter Authenticated routes
-            .map((route, key) => (
-              // Render routes
-              <Route {...route} key={key}>
-                {route.subPages
-                  ?.filter(e => !e.auth || (e.auth && user?.id)) // Filter Authenticated subPages
-                  ?.map((subPage, index) => (
-                    <Route {...subPage} key={key + "-" + index} />
-                  ))}
-              </Route>
-            ))}
-          <Route path="*" element={<Error404Page />} />
-        </Route>
-      </Routes>
+      <ProtectedRoutes>{children}</ProtectedRoutes>
     </BrowserRouter>
+  );
+}
+
+function ProtectedRoutes({ children }: any) {
+  const { user } = useUserContext() as UserContextInterface;
+  const { pathname } = useLocation();
+  if (pathname.includes("/admin") && !user?.id) {
+    return <Navigate to="/login" replace />;
+  }
+
+  return (
+    <Routes>
+      <Route path="/" element={children}>
+        {routes
+          .filter(e => !e.auth || (e.auth && user?.id)) // Filter Authenticated routes
+          .map((route, key) => (
+            // Render routes
+            <Route {...route} key={key}>
+              {route.subPages
+                ?.filter(e => !e.auth || (e.auth && user?.id)) // Filter Authenticated subPages
+                ?.map((subPage, index) => (
+                  <Route {...subPage} key={key + "-" + index} />
+                ))}
+            </Route>
+          ))}
+        <Route path="*" element={<Error404Page />} />
+      </Route>
+    </Routes>
   );
 }
 
@@ -36,9 +45,9 @@ import DashboardPage from "@pages/admin";
 import QuestionsPage from "@pages/admin/questions";
 import AnswersPage from "@pages/admin/answers";
 import LoginPage from "@pages/admin/login";
-import Error404Page from "@pages/Error404";
+import Error404Page from "@pages/404";
 
-const routes = [
+export const routes = [
   {
     title: "Questionnaire BigScreen",
     index: true,
@@ -53,20 +62,21 @@ const routes = [
     element: <AnswerPage />,
   },
   {
+    title: "Se connecter",
+    path: "login",
+    auth: false,
+    element: <LoginPage />,
+  },
+  {
     path: "admin",
     subPages: [
       {
         title: "Dashboard",
         index: true,
-        auth: false,
+        auth: true,
         element: <DashboardPage />,
       },
-      {
-        title: "Se connecter",
-        path: "login",
-        auth: false,
-        element: <LoginPage />,
-      },
+
       {
         title: "Réponses - Admin",
         path: "answers",

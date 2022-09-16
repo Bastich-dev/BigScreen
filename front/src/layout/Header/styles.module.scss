@@ -1,0 +1,34 @@
+.header {
+  position: relative;
+  padding: 45px 0;
+  z-index: 3;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  transition: 0.3s;
+  width: 11em;
+  margin-right: 48px;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.nav {
+  ul {
+    display: flex;
+    align-items: center;
+    li {
+      margin-left: 20px;
+      a {
+      }
+    }
+  }
+}

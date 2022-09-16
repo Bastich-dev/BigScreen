@@ -1,8 +1,16 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
-import CircularProgress from "@mui/material/CircularProgress";
 import api from "@utils/api";
-import UserPropsType from "@customTypes /UserPropsType";
-import UserContextInterface from "@customTypes /UserContextInterface";
+import Loader from "@components/Loader";
+
+export type UserPropsType = {
+  name?: string;
+  id?: string;
+};
+
+export interface UserContextInterface {
+  user: UserPropsType | undefined | null;
+  setUser: (user: UserPropsType) => void;
+}
 
 const UserContext = createContext<UserContextInterface | null>(null);
 export function useUserContext() {
@@ -21,6 +29,7 @@ export default function AuthProvider({ children }: any) {
         //  ---------------------------------------------------------------------------------------------------------------------------------------- TODO
         // setUser()
         setUser({ name: "John Doe", id: "eeeeee" }); // Exemple
+        // setUser(null);
       })
       .catch(() => {
         setUser(null);
@@ -30,8 +39,8 @@ export default function AuthProvider({ children }: any) {
   // - Render
   if (user === undefined) {
     return (
-      <div>
-        <CircularProgress />
+      <div style={{ width: "100%", height: "90vh", display: "flex", justifyContent: "center", alignItems: "center" }}>
+        <Loader />
       </div>
     );
   }
