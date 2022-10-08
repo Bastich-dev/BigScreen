@@ -35,3 +35,80 @@ body {
 ::-webkit-scrollbar-button {
   display: none;
 }
+
+// - HTML Elements
+
+main,
+section,
+article,
+.card {
+  will-change: opacity top;
+}
+
+main {
+  min-height: 70vh;
+  width: 100%;
+  margin-bottom: 5vh;
+}
+
+section {
+  z-index: 2;
+  position: relative;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  li {
+    list-style: none;
+  }
+}
+
+p,
+span {
+  color: #9da2af;
+}
+
+a {
+  &:visited {
+    color: white;
+  }
+}
+
+h1 {
+  font-family: "SFProDisplay-Bold";
+  font-size: 42px;
+  line-height: 64px;
+  letter-spacing: 0.02em;
+  font-weight: 700;
+  margin: 0 0 57px 0;
+}
+
+input {
+  height: 46px;
+  padding: 0 14px;
+  margin-bottom: 22px;
+  border-radius: 12px;
+  background: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  line-height: 1.71429;
+  border: 3px solid #777e90;
+  color: #fcfcfd;
+  transition: border-color 0.2s;
+  outline: none;
+  font-family: "Poppins";
+
+  &:focus,
+  &:focus-visible {
+    border-color: #e6e8ec;
+    box-shadow: none;
+  }
+}
+
+label {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}

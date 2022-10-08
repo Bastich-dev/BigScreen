@@ -30,7 +30,7 @@
       "@utils/*": ["src/utils/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.js", "**/*.jsx", "src/index.js"],
   "exclude": ["node_modules"],
   "plugins": [{ "name": "typescript-plugin-css-modules" }]
 }

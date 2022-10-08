@@ -6,7 +6,9 @@
   padding: 0 80px;
 }
 
-// - Common components
+// -  Components
+
+// loading-screen
 
 // card
 .card {
@@ -22,6 +24,13 @@
   display: flex;
   height: max-content;
   flex-direction: column;
+  box-shadow: rgba(255, 255, 255, 0.05) 0px 10px 15px;
+
+  & > header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 // btn

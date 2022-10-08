@@ -4,11 +4,7 @@ import { useLocation } from "react-router-dom";
 import { routes } from "@providers/RoutesProvider";
 import AdminLayout from "@layout/AdminLayout";
 
-type Props = {
-  children: JSX.Element;
-};
-
-export default function Transitions({ children }: Props) {
+export default function Transitions({ children }) {
   const { pathname } = useLocation();
 
   useEffect(() => {

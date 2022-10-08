@@ -13,27 +13,30 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 // Providers & Layout components
-import AuthProvider from "src/providers/AuthProvider";
+import AuthProvider from "@providers/AuthProvider";
 import RoutesProvider from "@providers/RoutesProvider";
 import Header from "@layout/Header";
 import Footer from "@layout/Footer";
 import TransitionProvider from "@providers/TransitionProvider";
 import { Outlet } from "react-router-dom";
 import TopFade from "@components/TopFade";
+import LoadingProvider from "@providers/LoadingProvider";
 
-const root = ReactDOM.createRoot(document.querySelector("body") as HTMLElement);
+const root = ReactDOM.createRoot(document.querySelector("body"));
 
 root.render(
   <React.StrictMode>
-    <AuthProvider>
-      <RoutesProvider>
-        <TopFade />
-        <Header />
-        <TransitionProvider>
-          <Outlet />
-        </TransitionProvider>
-      </RoutesProvider>
-    </AuthProvider>
+    <LoadingProvider>
+      <AuthProvider>
+        <RoutesProvider>
+          <TopFade />
+          <Header />
+          <TransitionProvider>
+            <Outlet />
+          </TransitionProvider>
+        </RoutesProvider>
+      </AuthProvider>
+    </LoadingProvider>
 
     <Footer />
     <ToastContainer />

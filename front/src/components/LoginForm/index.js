@@ -11,7 +11,7 @@ export default function LoginForm() {
 
   const navigate = useNavigate();
 
-  const onSubmit = (e: any) => {
+  const onSubmit = e => {
     e.preventDefault();
     console.log(e.target.elements);
     navigate("/admin");

@@ -1,8 +1,8 @@
 import React, { createContext } from "react";
 import { BrowserRouter, Routes, Route, RouterProvider, useLocation, Navigate } from "react-router-dom";
-import { useUserContext, UserContextInterface } from "@providers/AuthProvider";
+import { useUserContext } from "@providers/AuthProvider";
 
-export default function RoutesProvider({ children }: any) {
+export default function RoutesProvider({ children }) {
   return (
     <BrowserRouter>
       <ProtectedRoutes>{children}</ProtectedRoutes>
@@ -10,8 +10,8 @@ export default function RoutesProvider({ children }: any) {
   );
 }
 
-function ProtectedRoutes({ children }: any) {
-  const { user } = useUserContext() as UserContextInterface;
+function ProtectedRoutes({ children }) {
+  const { user } = useUserContext();
   const { pathname } = useLocation();
   if (pathname.includes("/admin") && !user?.id) {
     return <Navigate to="/login" replace />;

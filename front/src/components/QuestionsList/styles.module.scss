@@ -34,12 +34,9 @@
     & > div {
       border-top-right-radius: 0px !important;
 
-      label {
+      & > label {
         font-size: 24px;
         margin-bottom: 30px;
-      }
-      input {
-        max-width: 700px;
       }
     }
   }
@@ -63,4 +60,54 @@
       }
     }
   }
+}
+// Fields types
+
+.radio-input {
+  & > div {
+    display: flex;
+    flex-wrap: wrap;
+    label {
+      min-width: 150px;
+      max-width: max-content;
+
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #eeeeee55;
+      margin: 20px;
+      padding: 20px;
+      box-shadow: rgba(255, 255, 255, 0.05) 0px 5px 15px;
+      border-radius: 20px;
+      transition: 0.3s;
+      cursor: pointer;
+      &:hover {
+        transform: translateY(-10px);
+      }
+      input {
+        transition: 0.3s;
+        width: 40px;
+        height: 40px;
+        &:hover:after {
+          background-color: #ffa500;
+          border: 2px solid #ffa500;
+        }
+        &:after {
+          background-color: #ffa500;
+          border: 2px solid #ffa500;
+        }
+      }
+    }
+  }
+}
+
+.text-input {
+  input {
+    max-width: 700px;
+  }
+}
+
+.number-input {
 }

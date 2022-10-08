@@ -2,24 +2,14 @@ import React, { createContext, useContext, useState, useEffect } from "react";
 import api from "@utils/api";
 import Loader from "@components/Loader";
 
-export type UserPropsType = {
-  name?: string;
-  id?: string;
-};
-
-export interface UserContextInterface {
-  user: UserPropsType | undefined | null;
-  setUser: (user: UserPropsType) => void;
-}
-
-const UserContext = createContext<UserContextInterface | null>(null);
+const UserContext = createContext(null);
 export function useUserContext() {
   return useContext(UserContext);
 }
 
-export default function AuthProvider({ children }: any) {
+export default function AuthProvider({ children }) {
   // - States
-  const [user, setUser] = useState<UserPropsType | undefined | null>();
+  const [user, setUser] = useState();
 
   // - Lifecyle
   useEffect(() => {

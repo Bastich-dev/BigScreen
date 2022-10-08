@@ -9,7 +9,7 @@
 //   children: JSX.Element;
 // };
 
-// export default function Transitions({ children }: Props) {
+// export default function Transitions({ children }) {
 //   // - Constants
 //   const constant = 1;
 

@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import styles from "./styles.module.scss";
 
-export default function AdminLayout({ children }: any) {
+export default function AdminLayout({ children }) {
   const { pathname } = useLocation();
   return (
     <section className={styles["admin-layout"] + " container"}>
