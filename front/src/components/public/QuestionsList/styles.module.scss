@@ -54,7 +54,7 @@
       transition: 0.3s;
     }
 
-    &:hover {
+    &:hover:not(:disabled) {
       span {
         transform: translateX(20px);
       }
@@ -62,6 +62,13 @@
   }
 }
 // Fields types
+.success {
+  color: greenyellow !important;
+}
+
+.pending {
+  color: rgb(255, 191, 0) !important;
+}
 
 .radio-input {
   & > div {

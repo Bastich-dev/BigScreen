@@ -1,5 +1,5 @@
 // Imports
-import Table from "@components/admin/Table";
+import Table from "@components/common/Table";
 import gsap from "gsap";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import Collapsible from "react-collapsible";
@@ -19,7 +19,7 @@ const columns = [
   },
 ];
 
-export default function AnswerCollapse({ surveyName, answersList, user }) {
+export default function AnswerCollapse({ surveyName, answersList }) {
   // - Render
   return (
     <Collapsible

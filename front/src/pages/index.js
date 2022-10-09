@@ -1,8 +1,12 @@
 import BannerHome from "@components/public/BannerHome";
 import QuestionsList from "@components/public/QuestionsList";
 import TextSection from "@components/public/TextSection";
+import { useState } from "react";
+import surveysSchema from "@utils/mock_surveys.json";
 
 export default function SurveyPage() {
+  const [survey, setSurvey] = useState(surveysSchema[0]);
+
   return (
     <>
       <BannerHome />
@@ -19,7 +23,7 @@ export default function SurveyPage() {
           </>
         }
       />
-      <QuestionsList />
+      <QuestionsList survey={survey} />
     </>
   );
 }

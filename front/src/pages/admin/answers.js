@@ -1,4 +1,4 @@
-import AnswerCollapse from "@components/admin/AnswerCollapse";
+import AnswerCollapse from "@components/common/AnswerCollapse";
 import Loader from "@components/common/Loader";
 import gsap from "gsap";
 import { useEffect, useState } from "react";
@@ -21,12 +21,9 @@ export default function AnswersPage() {
   useEffect(() => {
     setAnswerFilteredList(
       answerList?.filter(
-        e =>
-          e.surveyName.includes(filterSearch) ||
-          e.user.username.includes(filterSearch) ||
-          e.user.email.includes(filterSearch) ||
-          //
-          e.user.email.includes(filterSearch)
+        e => e.surveyName.includes(filterSearch) || !!e.answersList.find(k => k.question.includes(filterSearch) || k.answer.includes(filterSearch))
+
+        //
       )
     );
   }, [filterSearch, answerList]);
@@ -39,7 +36,7 @@ export default function AnswersPage() {
           <input
             value={filterSearch}
             onChange={e => setFilterSearch(e.target.value)}
-            placeholder="Rechercher par titre, questionnaire, utilisateur ..."
+            placeholder="Rechercher par questionnaire, question, réponse ..."
             style={{ width: 400, height: 58, fontSize: 16 }}
           />
         </header>

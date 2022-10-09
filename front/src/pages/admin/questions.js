@@ -1,4 +1,4 @@
-import Table from "@components/admin/Table";
+import Table from "@components/common/Table";
 import gsap from "gsap";
 import { useEffect, useState } from "react";
 import surveysSchema from "@utils/mock_surveys.json";
@@ -41,7 +41,7 @@ export default function QuestionsPage() {
             placeholder="Questionnaires"
             value={selectedSurvey ? { value: selectedSurvey.id, label: selectedSurvey.name } : null}
             onChange={e => {
-              setSelectedSurvey(e);
+              setSelectedSurvey(surveysList.find(k => k.id === e.value));
             }}
             options={surveysList?.map(e => ({
               value: e.id,

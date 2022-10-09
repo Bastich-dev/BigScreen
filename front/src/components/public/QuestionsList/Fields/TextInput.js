@@ -6,7 +6,6 @@ export default function TextInput({ label, order }) {
     <>
       <label children={label} />
       <Field
-        maxLength={6}
         type="text"
         name={"survey-" + order}
         //

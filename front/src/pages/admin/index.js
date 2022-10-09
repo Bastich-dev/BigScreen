@@ -36,7 +36,7 @@ export default function DashboardPage() {
             placeholder="Questionnaires"
             value={selectedSurvey ? { value: selectedSurvey.id, label: selectedSurvey.name } : null}
             onChange={e => {
-              setSelectedSurvey(e);
+              setSelectedSurvey(surveysList.find(k => k.id === e.value));
             }}
             options={surveysList?.map(e => ({
               value: e.id,

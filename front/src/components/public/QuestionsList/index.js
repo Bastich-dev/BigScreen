@@ -6,12 +6,10 @@ import RadioInput from "./Fields/RadioInput";
 import TextInput from "./Fields/TextInput";
 import NumericInput from "./Fields/NumericInput";
 import { Formik, Field, Form } from "formik";
-import surveysSchema from "@utils/mock_surveys.json";
 import { useLoadingContext } from "@providers/LoadingProvider";
 import { useNavigate } from "react-router-dom";
 
-export default function QuestionsList() {
-  const [survey, setSurvey] = useState(surveysSchema[0]);
+export default function QuestionsList({ survey }) {
   const { setLoading } = useLoadingContext();
   const navigate = useNavigate();
 
@@ -32,7 +30,7 @@ export default function QuestionsList() {
   }, []);
 
   const onSubmit = async values => {
-    // setLoading(true);
+    setLoading(true);
     console.log(values);
 
     // Set New Answer
@@ -45,28 +43,34 @@ export default function QuestionsList() {
     const localStorageData = localStorage.getItem("old-answers") || "[]";
     localStorage.setItem("old-answers", JSON.stringify([...JSON.parse(localStorageData), newAnswer]));
 
-    // setTimeout(() => {
-    //   setLoading(false);
-    //   navigate("/thanks");
-    // }, 1000);
+    setTimeout(() => {
+      setLoading(false);
+      navigate("/thanks");
+    }, 1000);
   };
 
   return (
     <Formik initialValues={{}} onSubmit={onSubmit}>
-      <Form id="questions-form" className={styles["questions-list"] + " container"}>
-        {survey?.questions.map((question, key) => (
-          <article key={key}>
-            <b>
-              Question {key + 1} / {survey.questions.length}
-              <span className="material-symbols-outlined">help</span>
-            </b>
-            <GetAnswerType question={question} />
-          </article>
-        ))}
-        <button className="btn btn-special">
-          Envoyer le formulaire <span className="material-symbols-outlined">arrow_right_alt</span>
-        </button>
-      </Form>
+      {({ values }) => (
+        <Form id="questions-form" className={styles["questions-list"] + " container"}>
+          {survey?.questions.map((question, key) => (
+            <article key={key}>
+              <b>
+                Question {key + 1} / {survey.questions.length}
+                {values["survey-" + (key + 1)] ? (
+                  <span class={styles.success + " material-symbols-outlined"}>check_circle</span>
+                ) : (
+                  <span class={styles.pending + " material-symbols-outlined"}>help</span>
+                )}
+              </b>
+              <GetAnswerType question={question} />
+            </article>
+          ))}
+          <button className="btn btn-special" disabled={Object.keys(values).length < survey?.questions.length}>
+            Envoyer le formulaire ( {Object.keys(values).length} / {survey?.questions.length} ) <span className="material-symbols-outlined">arrow_right_alt</span>
+          </button>
+        </Form>
+      )}
     </Formik>
   );
 }

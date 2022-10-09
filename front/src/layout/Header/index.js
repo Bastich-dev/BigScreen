@@ -12,7 +12,7 @@ export default function Header() {
       <nav className={styles.nav}>
         <ul>
           <li>
-            <Link to="/answer" className="btn btn-primary">
+            <Link to="/old-answers" className="btn btn-primary">
               Mes réponses sauvegardées
             </Link>
           </li>

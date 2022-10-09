@@ -54,6 +54,11 @@
   padding: 0 16px;
   font-size: 14px;
 
+  &:disabled {
+    background: #888 !important;
+    cursor: not-allowed;
+  }
+
   &:hover {
     background: #2762ff;
   }
