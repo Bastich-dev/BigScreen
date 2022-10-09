@@ -2,7 +2,6 @@ import { Field } from "formik";
 import React, { useEffect } from "react";
 
 export default function RadioInput({ options, label, order }) {
-  console.log(label);
   return (
     <>
       <label children={label} />
@@ -10,7 +9,7 @@ export default function RadioInput({ options, label, order }) {
         {options?.map((option, key) => (
           <label key={key}>
             <Field type="radio" name="picked" value={option} />
-            {option}
+            <div>{option}</div>
           </label>
         ))}
       </div>

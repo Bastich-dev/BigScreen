@@ -70,6 +70,7 @@ span {
 }
 
 a {
+  color: white;
   &:visited {
     color: white;
   }
@@ -87,7 +88,6 @@ h1 {
 input {
   height: 46px;
   padding: 0 14px;
-  margin-bottom: 22px;
   border-radius: 12px;
   background: none;
   font-family: "Poppins", sans-serif;

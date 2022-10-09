@@ -86,6 +86,10 @@
       &:hover {
         transform: translateY(-10px);
       }
+
+      & > div {
+        margin-top: 10px;
+      }
       input {
         transition: 0.3s;
         width: 40px;

@@ -1,6 +1,6 @@
-import BannerHome from "@components/BannerHome";
-import QuestionsList from "@components/QuestionsList";
-import TextSection from "@components/TextSection";
+import BannerHome from "@components/public/BannerHome";
+import QuestionsList from "@components/public/QuestionsList";
+import TextSection from "@components/public/TextSection";
 
 export default function SurveyPage() {
   return (

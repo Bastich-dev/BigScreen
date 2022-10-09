@@ -1,0 +1,13 @@
+[
+  {
+    "surveyName": "Questionnaire 1",
+    "answersList": [
+      { "question": "dqdzdqzdqzdqzd", "answer": "dzdqzdzd" },
+      { "question": "dqdzqdzdqzd", "answer": "dzdqzdzd" }
+    ],
+    "user": {
+      "username": "Berthrand",
+      "email": "baba.shantrel@hotmail.com"
+    }
+  }
+]

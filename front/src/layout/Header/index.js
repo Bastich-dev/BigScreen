@@ -13,7 +13,7 @@ export default function Header() {
         <ul>
           <li>
             <Link to="/answer" className="btn btn-primary">
-              Réponses précédentes
+              Mes réponses sauvegardées
             </Link>
           </li>
           <li>

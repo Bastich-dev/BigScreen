@@ -2,6 +2,6 @@ module.exports = {
   // plugins: [require("prettier-plugin-tailwindcss")],
   arrowParens: "avoid",
   jsxBracketSameLine: true,
-  printWidth: 250,
+  printWidth: 180,
   endOfLine: "auto",
 };

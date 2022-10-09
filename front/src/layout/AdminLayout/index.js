@@ -1,3 +1,4 @@
+import AdminProvider from "@providers/AdminProvider";
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import styles from "./styles.module.scss";
@@ -10,14 +11,16 @@ export default function AdminLayout({ children }) {
         <nav>
           <ul>
             {navLinks.map((link, key) => (
-              <li key={key} className={pathname === link.path && styles.activeLink}>
+              <li key={key} className={pathname === link.path ? styles.activeLink : ""}>
                 <Link to={link.path}>{link.label}</Link>
               </li>
             ))}
           </ul>
         </nav>
       </aside>
-      <main className={styles.content}>{children}</main>
+      <main className={styles.content}>
+        <AdminProvider>{children}</AdminProvider>
+      </main>
     </section>
   );
 }

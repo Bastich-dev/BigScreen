@@ -4,8 +4,6 @@ import React from "react";
 // Styles
 import styles from "./styles.module.scss";
 
-// Types
-
 export default function Table({ columns = [], data = [] }) {
   // - Render
   return (
@@ -33,7 +31,7 @@ export default function Table({ columns = [], data = [] }) {
   );
 }
 
-function getType(type: string) {
+function getType(type) {
   switch (type) {
     case "RADIO":
       return "A";

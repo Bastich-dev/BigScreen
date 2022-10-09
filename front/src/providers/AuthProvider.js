@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 import api from "@utils/api";
-import Loader from "@components/Loader";
+import Loader from "@components/common/Loader";
 
 const UserContext = createContext(null);
 export function useUserContext() {

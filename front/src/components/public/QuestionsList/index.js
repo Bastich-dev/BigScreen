@@ -1,13 +1,20 @@
 import gsap from "gsap";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./styles.module.scss";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import RadioInput from "./Fields/RadioInput";
 import TextInput from "./Fields/TextInput";
 import NumericInput from "./Fields/NumericInput";
 import { Formik, Field, Form } from "formik";
-import surveySchema from "@utils/mock_survey.json";
+import surveysSchema from "@utils/mock_surveys.json";
+import { useLoadingContext } from "@providers/LoadingProvider";
+import { useNavigate } from "react-router-dom";
+
 export default function QuestionsList() {
+  const [survey, setSurvey] = useState(surveysSchema[0]);
+  const { setLoading } = useLoadingContext();
+  const navigate = useNavigate();
+
   useEffect(() => {
     const targets = "article";
     gsap.set(targets, { opacity: 0, top: 50 });
@@ -24,17 +31,33 @@ export default function QuestionsList() {
     });
   }, []);
 
+  const onSubmit = async values => {
+    // setLoading(true);
+    console.log(values);
+
+    // Set New Answer
+    const newAnswer = {
+      surveyName: survey.name,
+      answersList: Object.keys(values).map((el, key) => ({ question: survey.questions[key].label, answer: values[el] })),
+    };
+
+    // Save to localStorage
+    const localStorageData = localStorage.getItem("old-answers") || "[]";
+    localStorage.setItem("old-answers", JSON.stringify([...JSON.parse(localStorageData), newAnswer]));
+
+    // setTimeout(() => {
+    //   setLoading(false);
+    //   navigate("/thanks");
+    // }, 1000);
+  };
+
   return (
-    <Formik
-      initialValues={{}}
-      onSubmit={async values => {
-        console.log(values);
-      }}>
+    <Formik initialValues={{}} onSubmit={onSubmit}>
       <Form id="questions-form" className={styles["questions-list"] + " container"}>
-        {surveySchema.map((question, key) => (
+        {survey?.questions.map((question, key) => (
           <article key={key}>
             <b>
-              Question {key + 1} / {surveySchema.length}
+              Question {key + 1} / {survey.questions.length}
               <span className="material-symbols-outlined">help</span>
             </b>
             <GetAnswerType question={question} />

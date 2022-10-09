@@ -19,7 +19,7 @@ import Header from "@layout/Header";
 import Footer from "@layout/Footer";
 import TransitionProvider from "@providers/TransitionProvider";
 import { Outlet } from "react-router-dom";
-import TopFade from "@components/TopFade";
+import TopFade from "@components/common/TopFade";
 import LoadingProvider from "@providers/LoadingProvider";
 
 const root = ReactDOM.createRoot(document.querySelector("body"));

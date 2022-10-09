@@ -10,10 +10,14 @@ export default function Footer() {
         <nav>
           <ul>
             <li>
-              <a href="">terms of service</a>
+              <a target="_blank" rel="noopenner noreferrer" href="https://www.bigscreenvr.com/">
+                terms of service
+              </a>
             </li>
             <li>
-              <a href="">privacy </a>
+              <a target="_blank" rel="noopenner noreferrer" href="https://www.bigscreenvr.com/">
+                privacy{" "}
+              </a>
             </li>
           </ul>
         </nav>

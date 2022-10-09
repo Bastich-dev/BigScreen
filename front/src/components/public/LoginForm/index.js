@@ -27,8 +27,7 @@ export default function LoginForm() {
 
       <button className="btn">Se connecter</button>
 
-      <Link to="/">Mot de passe oublié ?</Link>
-      <Link to="/">Pas encore membre ? S'inscrire</Link>
+      <Link to="/forgot-password">Mot de passe oublié ?</Link>
     </form>
   );
 }

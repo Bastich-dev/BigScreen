@@ -1,0 +1,22 @@
+.form {
+  margin-top: 10vh;
+  width: 400px;
+  position: relative;
+
+  button {
+    height: 52px !important;
+    margin: 12px 0 40px;
+    font-size: 18px !important;
+  }
+
+  a {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  input {
+    margin-bottom: 40px;
+  }
+}

@@ -40,12 +40,14 @@ function ProtectedRoutes({ children }) {
 
 // List Routes
 import SurveyPage from "@pages/index";
-import AnswerPage from "@pages/answer";
+import AnswerPage from "@pages/old-answers";
 import DashboardPage from "@pages/admin";
 import QuestionsPage from "@pages/admin/questions";
 import AnswersPage from "@pages/admin/answers";
 import LoginPage from "@pages/login";
 import Error404Page from "@pages/404";
+import ThanksPage from "@pages/thanks";
+import ForgotPasswordPage from "@pages/forgot-password";
 
 export const routes = [
   {
@@ -57,7 +59,7 @@ export const routes = [
 
   {
     title: "Réponse précédente :",
-    path: "answer:id",
+    path: "old-answers",
     auth: false,
     element: <AnswerPage />,
   },
@@ -66,6 +68,18 @@ export const routes = [
     path: "login",
     auth: false,
     element: <LoginPage />,
+  },
+  {
+    title: "Mot de passe oublié",
+    path: "forgot-password",
+    auth: false,
+    element: <ForgotPasswordPage />,
+  },
+  {
+    title: "Merci",
+    path: "thanks",
+    auth: false,
+    element: <ThanksPage />,
   },
   {
     path: "admin",

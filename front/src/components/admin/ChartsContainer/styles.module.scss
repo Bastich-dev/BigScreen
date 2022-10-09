@@ -1,0 +1,10 @@
+.chartsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  & > * {
+    width: 50% !important;
+    & > * {
+      width: 100% !important;
+    }
+  }
+}

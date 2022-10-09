@@ -4,7 +4,7 @@
 // // Styles
 // import styles from "./styles.module.scss";
 
-// // Types
+//
 // type Props = {
 //   children: JSX.Element;
 // };

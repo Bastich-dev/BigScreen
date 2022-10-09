@@ -1,9 +1,9 @@
 // Imports
-import Table from "@components/Table";
+import Table from "@components/admin/Table";
 import gsap from "gsap";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import Collapsible from "react-collapsible";
-import surveySchema from "@utils/mock_survey.json";
+import surveySchema from "@utils/mock_surveys.json";
 
 // Styles
 import styles from "./styles.module.scss";
@@ -11,7 +11,7 @@ import styles from "./styles.module.scss";
 const columns = [
   {
     title: "Question",
-    key: "label",
+    key: "question",
   },
   {
     title: "Réponse",
@@ -36,10 +36,11 @@ export default function AnswerCollapse({ surveyName, answersList, user }) {
       trigger={
         <>
           <div>
-            <b>{surveyName}</b>
-            <span>
-              {user.username} - {user.email}
-            </span>
+            <b>
+              {/* {user.username} - {user.email} */}
+              {surveyName}
+            </b>
+            {/* <span>{surveyName}</span> */}
           </div>
           <span className="collapse-arrow material-symbols-outlined">chevron_left</span>
         </>
