@@ -45,7 +45,7 @@ export default function AnswerCollapse({ surveyName, answersList }) {
           <span className="collapse-arrow material-symbols-outlined">chevron_left</span>
         </>
       }>
-      <Table columns={columns} data={answersList} />
+      <Table columns={columns} data={answersList.map(e => ({ ...e, question: surveySchema[0].questions.find(k => k.id == e.question).label }))} />
     </Collapsible>
   );
 }

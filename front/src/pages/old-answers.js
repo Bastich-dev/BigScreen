@@ -5,10 +5,6 @@ export default function AnswerPage() {
   const listSurveys = JSON.parse(localStorageData);
 
   return (
-    <div className="card container">
-      {listSurveys?.map((el, key) => (
-        <AnswerCollapse key={key} {...el} />
-      ))}
-    </div>
+    <div className="card container">{listSurveys?.length ? listSurveys?.map((el, key) => <AnswerCollapse key={key} {...el} />) : <p>Aucune réponse n'a été encore émise</p>}</div>
   );
 }

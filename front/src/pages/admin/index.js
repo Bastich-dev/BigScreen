@@ -5,6 +5,7 @@ import Loader from "@components/common/Loader";
 import gsap from "gsap";
 import { useEffect, useState } from "react";
 import surveysSchema from "@utils/mock_surveys.json";
+import answersSchema from "@utils/mock_answers.json";
 import Select from "react-select";
 import { useAdminContext } from "@providers/AdminProvider";
 
@@ -19,7 +20,7 @@ export default function DashboardPage() {
 
   useEffect(() => {
     setTimeout(() => {
-      setChartsData(true);
+      setChartsData(answersSchema);
     }, 1000);
   }, []);
 
@@ -49,13 +50,21 @@ export default function DashboardPage() {
           <>
             <h2>Équipement</h2>
             <ChartsContainer>
-              <ChartPie />
-              <ChartRadar />
+              {[selectedSurvey.questions[5], selectedSurvey.questions[6], selectedSurvey.questions[9]].map(el => (
+                <div>
+                  <span>{el.label}</span>
+                  <ChartPie {...el} chatsData={chatsData} />
+                </div>
+              ))}
             </ChartsContainer>
             <h2>Qualité</h2>
             <ChartsContainer>
-              <ChartPie />
-              <ChartRadar />
+              {[selectedSurvey.questions[10], selectedSurvey.questions[11], selectedSurvey.questions[12], selectedSurvey.questions[13], selectedSurvey.questions[14]].map(el => (
+                <div>
+                  <span>{el.label}</span>
+                  <ChartRadar {...el} chatsData={chatsData} />
+                </div>
+              ))}
             </ChartsContainer>
           </>
         ) : (

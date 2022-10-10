@@ -31,7 +31,6 @@ export default function QuestionsList({ survey }) {
 
   const onSubmit = async values => {
     setLoading(true);
-    console.log(values);
 
     // Set New Answer
     const newAnswer = {

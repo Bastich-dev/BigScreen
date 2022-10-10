@@ -13,7 +13,6 @@ export default function ForgoPassword() {
 
   const onSubmit = e => {
     e.preventDefault();
-    console.log(e.target.elements);
     navigate("/admin");
   };
 

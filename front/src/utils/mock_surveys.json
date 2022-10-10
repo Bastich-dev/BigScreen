@@ -35,7 +35,7 @@
         "order": 10,
         "label": "Vous utilisez principalement Bigscreen pour :",
         "type": "RADIO",
-        "options": ["regarder la TV en direct", "regarder des films", "travailler", "jouer en solo", "jouer en équipe"]
+        "options": ["Regarder la TV en direct", "Regarder des films", "Travailler", "Jouer en solo", "Jouer en équipe"]
       },
       { "id": 11, "order": 11, "label": "Combien donnez-vous de point pour la qualité de l’image sur Bigscreen ?", "type": "NUMBER" },
       { "id": 12, "order": 12, "label": "Combien donnez-vous de point pour le confort d’utilisation de l’interface Bigscreen ?", "type": "NUMBER" },

@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
-import api from "@utils/api";
+import api, { getUser } from "@utils/api";
 import Loader from "@components/common/Loader";
 
 const UserContext = createContext(null);
@@ -13,17 +13,13 @@ export default function AuthProvider({ children }) {
 
   // - Lifecyle
   useEffect(() => {
-    api
-      .getUser()
-      .then(() => {
-        //  ---------------------------------------------------------------------------------------------------------------------------------------- TODO
-        // setUser()
-        setUser({ name: "John Doe", id: "eeeeee" }); // Exemple
-        // setUser(null);
-      })
-      .catch(() => {
-        setUser(null);
-      });
+    if (localStorage.getItem("token")) {
+      getUser()
+        .then(e => setUser(e))
+        .catch(() => {
+          setUser(false);
+        });
+    } else setUser(false);
   }, []);
 
   // - Render

@@ -1,8 +1,10 @@
+import { useUserContext } from "@providers/AuthProvider";
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./styles.module.scss";
 
 export default function Header() {
+  const { user } = useUserContext();
   return (
     <header className={styles.header + " container"}>
       <Link to="/" className={styles.logo}>
@@ -18,7 +20,7 @@ export default function Header() {
           </li>
           <li>
             <Link to="/login" className="btn btn-secondary">
-              <span className="material-symbols-outlined">person</span> Se connecter
+              <span className="material-symbols-outlined">person</span> {user?.email || "Se connecter"}
             </Link>
           </li>
         </ul>

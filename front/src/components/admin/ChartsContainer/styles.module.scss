@@ -1,8 +1,9 @@
 .chartsContainer {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   & > * {
-    width: 50% !important;
+    width: 48% !important;
     & > * {
       width: 100% !important;
     }

@@ -5,51 +5,59 @@ import React, { useState, useCallback, useEffect } from "react";
 import styles from "./styles.module.scss";
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis } from "recharts";
 
-export default function ChartRadar() {
+export default function ChartRadar({ id, options, chatsData }) {
   return (
-    <RadarChart cx={300} cy={250} outerRadius={150} width={500} height={500} data={data}>
+    <RadarChart
+      cx={200}
+      cy={220}
+      outerRadius={150}
+      width={500}
+      height={460}
+      data={[
+        {
+          subject: "1",
+          A: chatsData.reduce((g, v) => {
+            if (v.answersList.find(k => k.answer == "1" && k.question == id)) return ++g;
+            else return g;
+          }, 0),
+          fullMark: 150,
+        },
+        {
+          subject: "2",
+          A: chatsData.reduce((g, v) => {
+            if (v.answersList.find(k => k.answer == "2" && k.question == id)) return ++g;
+            else return g;
+          }, 0),
+          fullMark: 150,
+        },
+        {
+          subject: "3",
+          A: chatsData.reduce((g, v) => {
+            if (v.answersList.find(k => k.answer == "3" && k.question == id)) return ++g;
+            else return g;
+          }, 0),
+          fullMark: 150,
+        },
+        {
+          subject: "4",
+          A: chatsData.reduce((g, v) => {
+            if (v.answersList.find(k => k.answer == "4" && k.question == id)) return ++g;
+            else return g;
+          }, 0),
+          fullMark: 150,
+        },
+        {
+          subject: "5",
+          A: chatsData.reduce((g, v) => {
+            if (v.answersList.find(k => k.answer == "5" && k.question == id)) return ++g;
+            else return g;
+          }, 0),
+          fullMark: 150,
+        },
+      ]}>
       <PolarGrid />
-      <PolarAngleAxis dataKey="subject" />
-      <PolarRadiusAxis />
-      <Radar name="Mike" dataKey="A" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
+      <PolarAngleAxis dataKey="subject" stroke="#eee" />
+      <Radar dataKey="A" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
     </RadarChart>
   );
 }
-const data = [
-  {
-    subject: "Math",
-    A: 120,
-    B: 110,
-    fullMark: 150,
-  },
-  {
-    subject: "Chinese",
-    A: 98,
-    B: 130,
-    fullMark: 150,
-  },
-  {
-    subject: "English",
-    A: 86,
-    B: 130,
-    fullMark: 150,
-  },
-  {
-    subject: "Geography",
-    A: 99,
-    B: 100,
-    fullMark: 150,
-  },
-  {
-    subject: "Physics",
-    A: 85,
-    B: 90,
-    fullMark: 150,
-  },
-  {
-    subject: "History",
-    A: 65,
-    B: 85,
-    fullMark: 150,
-  },
-];

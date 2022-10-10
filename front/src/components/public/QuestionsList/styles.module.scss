@@ -67,15 +67,16 @@
 }
 
 .pending {
-  color: rgb(255, 191, 0) !important;
+  color: rgb(255, 234, 0) !important;
 }
 
+.number-input,
 .radio-input {
   & > div {
     display: flex;
     flex-wrap: wrap;
     label {
-      min-width: 150px;
+      min-width: 110px;
       max-width: max-content;
 
       width: 100%;
@@ -118,7 +119,4 @@
   input {
     max-width: 700px;
   }
-}
-
-.number-input {
 }
