@@ -27,6 +27,7 @@ export default function LoginForm() {
       .then(e => {
         setUser(e);
         navigate("/admin");
+        setError(false);
       })
       .catch(() => {
         setError(true);
@@ -40,7 +41,7 @@ export default function LoginForm() {
     <form className={styles.form + " card"} onSubmit={onSubmit}>
       <h1>Connexion</h1>
 
-      {error && <p>Une erreur est survenue à la connexion</p>}
+      <p style={{ visibility: error ? "visible" : "hidden" }}>Une erreur est survenue à la connexion</p>
       <label>Email</label>
       <input />
       <label>Mot de passe</label>
