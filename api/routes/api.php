@@ -19,18 +19,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/surveys', 'App\Http\Controllers\SurveyController@list');
 Route::post('/answers', 'App\Http\Controllers\AnswerController@post');
 
-
 // Auth Routes
 // --------------------------------------------------------------------------------------------------------------
-
 Route::post('/login', 'App\Http\Controllers\Api\Auth\AuthController@login')->name('auth.login');
-Route::post('/logout', 'App\Http\Controllers\Api\Auth\AuthController@logout')->middleware('auth:sanctum')->name('auth.logout');
-Route::get('/user', 'App\Http\Controllers\Api\Auth\AuthController@getAuthenticatedUser')->middleware('auth:sanctum')->name('auth.user');
 
 // Admin Routes
 // --------------------------------------------------------------------------------------------------------------
-
 Route::group(['middleware' => ['auth:sanctum']], function () {
 	Route::get('/answers', 'App\Http\Controllers\AnswerController@list');
 	Route::get('/answers/stats', 'App\Http\Controllers\AnswerController@stats');
+	Route::post('/logout', 'App\Http\Controllers\Api\Auth\AuthController@logout')->name('auth.logout');
+	Route::get('/user', 'App\Http\Controllers\Api\Auth\AuthController@getAuthenticatedUser')->name('auth.user');
 });

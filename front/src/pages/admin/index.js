@@ -1,4 +1,4 @@
-import BarPie from "@components/admin/BarPie";
+import ChartRadar from "@components/admin/ChartRadar";
 import ChartPie from "@components/admin/ChartPie";
 import ChartsContainer from "@components/admin/ChartsContainer";
 import Loader from "@components/common/Loader";
@@ -50,12 +50,12 @@ export default function DashboardPage() {
             <h2>Équipement</h2>
             <ChartsContainer>
               <ChartPie />
-              <BarPie />
+              <ChartRadar />
             </ChartsContainer>
             <h2>Qualité</h2>
             <ChartsContainer>
               <ChartPie />
-              <BarPie />
+              <ChartRadar />
             </ChartsContainer>
           </>
         ) : (

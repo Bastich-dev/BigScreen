@@ -13,13 +13,7 @@ class Question extends Model
     protected $table = 'questions';
     public $timestamps = true;
 
-    protected $casts = [
-        'rate' => 'float'
-    ];
-
     protected $fillable = [
-        'name',
-        'code',
-        'rate',
+        'body',
     ];
 }

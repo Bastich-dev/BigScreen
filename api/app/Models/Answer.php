@@ -10,16 +10,11 @@ class Answer extends Model
     use HasFactory;
 
 
-    protected $table = 'currencies';
+    protected $table = 'answers';
     public $timestamps = true;
-
-    protected $casts = [
-        'rate' => 'float'
-    ];
 
     protected $fillable = [
         'name',
-        'code',
-        'rate',
+        'responses',
     ];
 }

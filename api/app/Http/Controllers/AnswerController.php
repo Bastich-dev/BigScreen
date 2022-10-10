@@ -23,6 +23,12 @@ class AnswerController extends Controller
      */
     public function list()
     {
+        $answers = Answer::all();
+        return response()->json([
+            "success" => true,
+            "message" => "Answer List",
+            "data" => $answers
+        ]);
     }
 
 
@@ -47,7 +53,20 @@ class AnswerController extends Controller
      * @param  \App\Models\Answer  $currencD
      * @return \Illuminate\Http\Response
      */
-    public function stats($id, Request $request)
+    public function stats()
     {
+        $answers = Answer::all();
+
+        return response()->json([
+            "success" => true,
+            "message" => "Stats List",
+            "data" => [
+                "6" => "",
+                "7" => "",
+                "10" => "",
+                "11" => "",
+                "15" => "",
+            ]
+        ]);
     }
 }

@@ -13,13 +13,10 @@ class Survey extends Model
     protected $table = 'surveys';
     public $timestamps = true;
 
-    protected $casts = [
-        'rate' => 'float'
-    ];
+
 
     protected $fillable = [
         'name',
-        'code',
-        'rate',
+        'questions',
     ];
 }

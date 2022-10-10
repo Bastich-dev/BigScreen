@@ -6,7 +6,7 @@ export default function TextInput({ label, order }) {
     <>
       <label children={label} />
       <Field
-        type="text"
+        type={order === 1 ? "email" : "text"}
         name={"survey-" + order}
         //
       />

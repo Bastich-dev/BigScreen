@@ -17,25 +17,16 @@ class SurveySeeder extends Seeder
     {
         Survey::truncate();
 
-        $json = File::get("../currencies/currencies-list.json");
-        $currencies = json_decode($json);
+        $json = File::get("./storage/seeders/surveys.json");
+        $surveys = json_decode($json);
 
 
 
-        foreach ($currencies as $key => $value) {
-
-            $min = 0.5;
-            $max = 3;
-            $decimals = 2;
-
-            $divisor = pow(10, $decimals);
-            $randomFloat = mt_rand($min, $max * $divisor) / $divisor;
-
-
+        foreach ($surveys as $key => $value) {
+            echo $value->name;
             Survey::create([
                 "name" => $value->name,
-                "code" => $value->code,
-                "rate" => $randomFloat
+                "questions" => $value->questions,
             ]);
         }
     }

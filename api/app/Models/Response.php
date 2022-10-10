@@ -13,13 +13,8 @@ class Response extends Model
     protected $table = 'responses';
     public $timestamps = true;
 
-    protected $casts = [
-        'rate' => 'float'
-    ];
-
     protected $fillable = [
-        'name',
-        'code',
-        'rate',
+        'body',
+        'question_id',
     ];
 }

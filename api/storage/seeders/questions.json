@@ -1,0 +1,143 @@
+[
+    {
+        "id": 1,
+        "order": 1,
+        "label": "Votre adresse e-mail",
+        "type": "TEXT"
+    },
+    { "id": 2, "order": 2, "label": "Votre âge", "type": "TEXT" },
+    {
+        "id": 3,
+        "order": 3,
+        "label": "Votre genre",
+        "type": "RADIO",
+        "options": ["Homme", "Femme", "Préfère ne pas répondre"]
+    },
+    {
+        "id": 4,
+        "order": 4,
+        "label": "Nombre de personne dans votre foyer (adulte & enfants)",
+        "type": "NUMBER"
+    },
+    {
+        "id": 5,
+        "order": 5,
+        "label": "Votre profession",
+        "type": "TEXT"
+    },
+    {
+        "id": 6,
+        "order": 6,
+        "label": "Quel marque de casque VR utilisez-vous ?",
+        "type": "RADIO",
+        "options": [
+            "Oculus Quest",
+            "Oculus Rift/s",
+            "HTC Vive",
+            "Windows Mixed Reality",
+            "Valve index"
+        ]
+    },
+    {
+        "id": 7,
+        "order": 7,
+        "label": "Sur quel magasin d’application achetez vous des contenus VR ?",
+        "type": "RADIO",
+        "options": ["SteamVR", "Occulus store", "Viveport", "Windows store"]
+    },
+    {
+        "id": 8,
+        "order": 8,
+        "label": "Quel casque envisagez-vous d’acheter dans un futur proche ?",
+        "type": "RADIO",
+        "options": [
+            "Occulus Quest",
+            "Occulus Go",
+            "HTC Vive Pro",
+            "PSVR",
+            "Autre",
+            "Aucun"
+        ]
+    },
+    {
+        "id": 9,
+        "order": 9,
+        "label": "Au sein de votre foyer, combien de personnes utilisent votre casque VR pour regarder Bigscreen ?",
+        "type": "NUMBER"
+    },
+    {
+        "id": 10,
+        "order": 10,
+        "label": "Vous utilisez principalement Bigscreen pour :",
+        "type": "RADIO",
+        "options": [
+            "regarder la TV en direct",
+            "regarder des films",
+            "travailler",
+            "jouer en solo",
+            "jouer en équipe"
+        ]
+    },
+    {
+        "id": 11,
+        "order": 11,
+        "label": "Combien donnez-vous de point pour la qualité de l’image sur Bigscreen ?",
+        "type": "NUMBER"
+    },
+    {
+        "id": 12,
+        "order": 12,
+        "label": "Combien donnez-vous de point pour le confort d’utilisation de l’interface Bigscreen ?",
+        "type": "NUMBER"
+    },
+    {
+        "id": 13,
+        "order": 13,
+        "label": "Combien donnez-vous de point pour la connexion réseau de Bigscreen ?",
+        "type": "NUMBER"
+    },
+    {
+        "id": 14,
+        "order": 14,
+        "label": "Combien donnez-vous de point pour la qualité des graphismes 3D dans Bigscreen ?",
+        "type": "NUMBER"
+    },
+    {
+        "id": 15,
+        "order": 15,
+        "label": "Combien donnez-vous de point pour la qualité audio dans Bigscreen ?",
+        "type": "NUMBER"
+    },
+    {
+        "id": 16,
+        "order": 16,
+        "label": "Aimeriez vous avoir des notifications plus précises au cours de vos sessions Bigscreen ?",
+        "type": "RADIO",
+        "options": ["Oui", "Non"]
+    },
+    {
+        "id": 17,
+        "order": 17,
+        "label": "Aimeriez vous pouvoir inviter un ami à rejoindre votre session via son smartphone ?",
+        "type": "RADIO",
+        "options": ["Oui", "Non"]
+    },
+    {
+        "id": 18,
+        "order": 18,
+        "label": "Aimeriez vous pouvoir enregistrer des émissions TV pour pouvoir les regarder ultérieurement ?",
+        "type": "NUMBER"
+    },
+    {
+        "id": 19,
+        "order": 19,
+        "label": "Aimeriez-vous jouer à des jeux exclusifs sur votre Bigscreen ?",
+        "type": "NUMBER"
+    },
+    {
+        "id": 20,
+        "order": 20,
+        "label": "Quelle nouvelle fonctionnalité devrait exister sur Bigscreen ?",
+        "type": "TEXT"
+    }
+]

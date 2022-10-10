@@ -15,28 +15,12 @@ class AnswerSeeder extends Seeder
      */
     public function run()
     {
-        Answer::truncate();
+        $answers = Answer::all();
 
-        $json = File::get("../currencies/currencies-list.json");
-        $currencies = json_decode($json);
-
-
-
-        foreach ($currencies as $key => $value) {
-
-            $min = 0.5;
-            $max = 3;
-            $decimals = 2;
-
-            $divisor = pow(10, $decimals);
-            $randomFloat = mt_rand($min, $max * $divisor) / $divisor;
-
-
-            Answer::create([
-                "name" => $value->name,
-                "code" => $value->code,
-                "rate" => $randomFloat
-            ]);
-        }
+        return response()->json([
+            "success" => true,
+            "message" => "Answer List",
+            "data" => $answers
+        ]);
     }
 }

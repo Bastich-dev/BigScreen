@@ -24,12 +24,11 @@ class SurveyController extends Controller
      */
     public function list()
     {
-        // $currencies = Survey::all();
-
-        // return response()->json([
-        //     "success" => true,
-        //     "message" => "Survey List",
-        //     "data" => $currencies
-        // ]);
+        $surveys = Survey::all();
+        return response()->json([
+            "success" => true,
+            "message" => "Survey List",
+            "data" => $surveys
+        ]);
     }
 }
