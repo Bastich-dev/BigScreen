@@ -14,8 +14,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/ping', function () {
+	return [
+		"api_on" => true,
+		'message' => "API working !"
+	];
+});
+
 // Public Routes
 // --------------------------------------------------------------------------------------------------------------
+
 Route::get('/surveys', 'App\Http\Controllers\SurveyController@list');
 Route::post('/answers', 'App\Http\Controllers\AnswerController@post');
 

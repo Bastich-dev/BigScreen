@@ -19,16 +19,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-
-
-
         // Create user exemple
         DB::table('users')->insert([
             'name' => "John Doe",
             'email' => "johndoe@example.org",
             'password' => Hash::make('password123')
         ]);
-
 
         // Call seeders 
         $this->call([

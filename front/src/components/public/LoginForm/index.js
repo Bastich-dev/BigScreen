@@ -2,14 +2,14 @@ import { useUserContext } from "@providers/AuthProvider";
 import { useLoadingContext } from "@providers/LoadingProvider";
 import { login } from "@utils/api";
 import gsap from "gsap";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./styles.module.scss";
 
 export default function LoginForm() {
   const { setLoading } = useLoadingContext();
   const { setUser } = useUserContext();
-
+  const [error, setError] = useState();
   useEffect(() => {
     gsap.set("form", { opacity: 0, top: 20 });
     gsap.to("form", { opacity: 1, top: 0, delay: 0.4, duration: 0.4 });
@@ -28,6 +28,9 @@ export default function LoginForm() {
         setUser(e);
         navigate("/admin");
       })
+      .catch(() => {
+        setError(true);
+      })
       .finally(() => {
         setLoading(false);
       });
@@ -36,6 +39,8 @@ export default function LoginForm() {
   return (
     <form className={styles.form + " card"} onSubmit={onSubmit}>
       <h1>Connexion</h1>
+
+      {error && <p>Une erreur est survenue à la connexion</p>}
       <label>Email</label>
       <input />
       <label>Mot de passe</label>

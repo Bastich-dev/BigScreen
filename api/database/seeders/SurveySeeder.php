@@ -21,7 +21,6 @@ class SurveySeeder extends Seeder
         $surveys = json_decode($json);
 
 
-
         foreach ($surveys as $key => $value) {
             echo $value->name;
             Survey::create([
