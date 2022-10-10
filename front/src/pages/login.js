@@ -8,11 +8,11 @@ export default function LoginPage() {
   const { user, setUser } = useUserContext();
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (localStorage.getItem("token")) {
-      navigate("/admin");
-    } else setUser(false);
-  }, []);
+  // useEffect(() => {
+  //   if (localStorage.getItem("token")) {
+  //     navigate("/admin");
+  //   } else setUser(false);
+  // }, []);
 
   return (
     <>

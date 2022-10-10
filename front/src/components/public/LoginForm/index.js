@@ -20,21 +20,17 @@ export default function LoginForm() {
   const onSubmit = e => {
     setLoading(true);
     e.preventDefault();
-    login({
-      email: e.target.elements[0].value,
-      password: e.target.elements[1].value,
-    })
-      .then(e => {
+
+    setTimeout(() => {
+      if (e.target.elements[0].value === "johndoe@example.org") {
         setUser(e);
         navigate("/admin");
         setError(false);
-      })
-      .catch(() => {
+      } else {
         setError(true);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
+      }
+      setLoading(false);
+    }, 1000);
   };
 
   return (
