@@ -21,16 +21,22 @@ export default function LoginForm() {
     setLoading(true);
     e.preventDefault();
 
-    setTimeout(() => {
-      if (e.target.elements[0].value === "johndoe@example.org") {
-        setUser(e);
+    login({
+      email: e.target.elements[0].value,
+      password: e.target.elements[1].value,
+    })
+      .then(k => {
+        console.log(k);
+        setUser(k);
         navigate("/admin");
         setError(false);
-      } else {
+      })
+      .catch(() => {
         setError(true);
-      }
-      setLoading(false);
-    }, 1000);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   };
 
   return (
