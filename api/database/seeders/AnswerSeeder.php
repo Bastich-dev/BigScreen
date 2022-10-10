@@ -3,10 +3,10 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\Currency;
+use App\Models\Answer;
 use File;
 
-class CurrencySeeder extends Seeder
+class AnswerSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,7 +15,7 @@ class CurrencySeeder extends Seeder
      */
     public function run()
     {
-        Currency::truncate();
+        Answer::truncate();
 
         $json = File::get("../currencies/currencies-list.json");
         $currencies = json_decode($json);
@@ -32,7 +32,7 @@ class CurrencySeeder extends Seeder
             $randomFloat = mt_rand($min, $max * $divisor) / $divisor;
 
 
-            Currency::create([
+            Answer::create([
                 "name" => $value->name,
                 "code" => $value->code,
                 "rate" => $randomFloat
